@@ -144,6 +144,7 @@ clean {
 processResources { dependsOn "copyReactBuildFiles" }
 
 tasks.register('installReact', Exec) {
+    dependsOn "installNodeAndYarn"
     workingDir "$frontendDir"
     inputs.dir "$frontendDir"
     group = BasePlugin.BUILD_GROUP
